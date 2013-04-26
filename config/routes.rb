@@ -1,7 +1,9 @@
 YoganowApi::Application.routes.draw do
+
   mount RailsAdmin::Engine => '/console', :as => 'rails_admin'
 
   devise_for :admins
+  get '/yoga_studios' => 'yoga_studios#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
