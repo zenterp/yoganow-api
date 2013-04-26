@@ -12,6 +12,7 @@ gem "rspec-rails"
 # App-specific
 gem 'geocoder'
 gem 'groupdate'
+gem 'omniauth'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
