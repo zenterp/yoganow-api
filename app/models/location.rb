@@ -1,11 +1,20 @@
 class Location
-  
+
   def self.find(query)
     Location.new(query)
   end
 
   def initialize(query)
     @search = Geocoder.search(query)[0]
+  end 
+
+  def to_json
+    { 
+      city: city,
+      neighborhood: neighborhood,
+      address: address,
+      zipcode: zipcode
+    }.to_json
   end 
 
   def city
