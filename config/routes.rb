@@ -1,4 +1,8 @@
 YoganowApi::Application.routes.draw do
+  mount RailsAdmin::Engine => '/console', :as => 'rails_admin'
+
+  devise_for :admins
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

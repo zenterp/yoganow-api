@@ -203,14 +203,10 @@
 
       <div id="content">
         <div id="header">
-          <h1>Ready to hack the Yoga Space?</h1>
+          <h1>Ready to hack the Yoga Space?</h1><br/>
           <h2>The JSON API that powers YogaNow runs on Ruby, Linux inside Amazon's EC2 datacenters.</h2>
         </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
+        <br/><br/><br/>
 
         <div id="getting-started">
           <h1>Getting started</h1>
@@ -218,20 +214,14 @@
 
           <ol>
             <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
+              <h2>The first public API endpoint is a geographic search for yoga studios.</h2>
+              <p>GET /yoga_studios.json?location=78759</p>
+              <p>or</p>
+              <p>GET /yoga_studios.json?location=Berkeley</p>
             </li>
 
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
           </ol>
+
         </div>
       </div>
 
