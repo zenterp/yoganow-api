@@ -7,6 +7,7 @@ gem 'thin'
 gem 'rails_admin'
 gem "devise"
 gem "active_model_serializers"
+gem "rspec-rails"
 
 # App-specific
 gem 'geocoder'
