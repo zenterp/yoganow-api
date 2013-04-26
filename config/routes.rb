@@ -4,7 +4,6 @@ YoganowApi::Application.routes.draw do
 
   devise_for :admins
   get '/yoga_studios' => 'yoga_studios#index'
-  get '/location' => 'application#location'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
