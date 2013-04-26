@@ -13,6 +13,7 @@ gem "rspec-rails"
 gem 'geocoder'
 gem 'groupdate'
 gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
