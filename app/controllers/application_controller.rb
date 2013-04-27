@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
   	headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Request-Method'] = '*'
   end 
+
+  def location
+  	location = params[:location] || "30.406363,-97.733763"
+  	render json: Location.find(location).to_json
+  end 
 end

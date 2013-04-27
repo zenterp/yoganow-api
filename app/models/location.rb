@@ -8,6 +8,15 @@ class Location
     @search = Geocoder.search(query)[0]
   end 
 
+  def to_json
+    {
+      city: city,
+      neighborhood: neighborhood,
+      address: address,
+      zipcode: zipcode
+    }.to_json
+  end 
+
   def city
     @search.data["address_components"].select {|component|
       component["types"] && component["types"][0] == "locality"
