@@ -9,6 +9,10 @@ gem "devise"
 gem "active_model_serializers"
 gem "rspec-rails"
 
+group :production do
+	gem 'newrelic_rpm'
+end
+
 # App-specific
 gem 'geocoder'
 gem 'groupdate'
