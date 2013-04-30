@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426164152) do
+ActiveRecord::Schema.define(:version => 20130430191544) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -43,6 +43,21 @@ ActiveRecord::Schema.define(:version => 20130426164152) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "yoga_classes", :force => true do |t|
+    t.time     "start_time"
+    t.integer  "duration"
+    t.integer  "yoga_studio_id"
+    t.string   "name"
+    t.string   "data"
+    t.string   "day"
+    t.integer  "price"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "yoga_classes", ["day"], :name => "index_yoga_classes_on_day"
+  add_index "yoga_classes", ["yoga_studio_id"], :name => "index_yoga_classes_on_yoga_studio_id"
 
   create_table "yoga_studios", :force => true do |t|
     t.string   "name"

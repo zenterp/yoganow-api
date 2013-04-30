@@ -1,7 +1,5 @@
 class YogaClassesController < ApplicationController
-  def index
-    studio = YogaStudio.find(params[:yoga_studio_id])
-
-	render json: studio.yoga_classes
+  def index   
+	render json: YogaClass.where(yoga_studio_id: params[:yoga_studio_id])
   end
 end
