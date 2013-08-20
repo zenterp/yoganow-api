@@ -3,11 +3,12 @@ YoganowApi::Application.routes.draw do
   mount RailsAdmin::Engine => '/console', :as => 'rails_admin'
 
   devise_for :admins
-
-  resources :yoga_studios, only: :index do
-    resources :yoga_classes, only: :index
-  end 
-
+  namespace :api do
+    resources :yoga_studios, only: :index do
+      resources :yoga_classes, only: :index
+    end 
+  end
+  
   get '/location' => 'application#location'
 
   # The priority is based upon order of creation:
