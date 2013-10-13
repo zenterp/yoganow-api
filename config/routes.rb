@@ -4,7 +4,7 @@ YoganowApi::Application.routes.draw do
 
   devise_for :admins
   namespace :api do
-    resources :yoga_studios
+    resources :yoga_studios do
       resources :yoga_classes
     end 
   end
