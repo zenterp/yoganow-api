@@ -8,4 +8,12 @@ class Api::YogaClassesController < ApplicationController
       today: Time.now.strftime('%A').downcase
     }.to_json
   end
+
+  def create
+    if (@yoga_class = YogaClass.create(params[:yoga_studio]))
+      render json: @yoga_class
+    else
+      render status: :forbidden
+    end
+  end 
 end

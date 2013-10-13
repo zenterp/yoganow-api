@@ -7,4 +7,12 @@ class Api::YogaStudiosController < ApplicationController
       studios: YogaStudio.near([params[:lat], params[:lng]]) 
     }.to_json
   end
+  
+  def create
+    if (@studio = YogaStudio.create(params[:yoga_studio]))
+      render json: @studio
+    else
+      render status: :forbidden
+    end
+  end 
 end

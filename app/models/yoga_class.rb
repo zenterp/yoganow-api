@@ -1,6 +1,21 @@
 class YogaClass < ActiveRecord::Base
-  attr_accessible :data, :day, :duration, :name, :price, :start_time, :yoga_studio_id
-  validates_presence_of :yoga_studio_id, :name, :start_time, :duration, :day
+  attr_accessible \
+    :instructor_name,
+    :data,
+    :day,
+    :duration, 
+    :name,
+    :price,
+    :start_time,
+    :yoga_studio_id
+
+  validates_presence_of \
+    :yoga_studio_id,
+    :name,
+    :start_time,
+    :duration,
+    :day
+
   belongs_to :yoga_studio
 
   scope :today, where(day: Time.now.strftime('%A').downcase)
