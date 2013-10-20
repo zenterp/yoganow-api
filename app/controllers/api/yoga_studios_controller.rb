@@ -1,5 +1,5 @@
 class Api::YogaStudiosController < ApplicationController
-  def index
+  def nearby
   	ActiveRecord::Base.include_root_in_json = false
 	  render json: { 
       lat: params[:lat], 
