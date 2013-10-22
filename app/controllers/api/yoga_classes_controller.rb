@@ -35,7 +35,7 @@ class Api::YogaClassesController < ApplicationController
       end
       render json: yoga_classes
     else
-      @yoga_class = YogaClass.create(params[:yoga_class]))
+      @yoga_class = YogaClass.create(params[:yoga_class])
       render json: @yoga_class
     end
   end 
