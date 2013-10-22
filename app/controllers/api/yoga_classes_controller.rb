@@ -25,20 +25,18 @@ class Api::YogaClassesController < ApplicationController
 
   def create
     if params[:yoga_class][:day].class == Array
-      if (@yoga_class = YogaClass.create(params[:yoga_class]))
-        render json: @yoga_class
-      else
-        render status: :forbidden
-      end
-    else
       yoga_classes = []
       yoga_class_params = params[:yoga_class]
       days = yoga_class_params.delete(:day)
       days.each do |day|
+        yoga_class_params.delete(:day)
         yoga_class = YogaClass.create(yoga_class_params.merge(day: day))
         yoga_classes.push(yoga_class)
       end
       render json: yoga_classes
+    else
+      @yoga_class = YogaClass.create(params[:yoga_class]))
+      render json: @yoga_class
     end
   end 
 end
