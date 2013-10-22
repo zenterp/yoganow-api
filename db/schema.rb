@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430191544) do
+ActiveRecord::Schema.define(:version => 20131022044806) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130430191544) do
     t.string   "username"
     t.integer  "item"
     t.string   "table"
-    t.integer  "month",      :limit => 2
+    t.integer  "month"
     t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
@@ -45,15 +45,16 @@ ActiveRecord::Schema.define(:version => 20130430191544) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "yoga_classes", :force => true do |t|
-    t.time     "start_time"
     t.integer  "duration"
     t.integer  "yoga_studio_id"
     t.string   "name"
     t.string   "data"
     t.string   "day"
     t.integer  "price"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "instructor_name"
+    t.integer  "start_time"
   end
 
   add_index "yoga_classes", ["day"], :name => "index_yoga_classes_on_day"
