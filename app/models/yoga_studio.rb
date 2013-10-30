@@ -1,5 +1,5 @@
 class YogaStudio < ActiveRecord::Base
-  attr_accessible :address, :facebook_id, :facebook_url, :latitude, :longitude, :name, :website
+  attr_accessible :address, :facebook_id, :facebook_url, :latitude, :longitude, :name, :website, :mindbody_studioid
   validates_presence_of :address, :name
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
