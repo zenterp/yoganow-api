@@ -171,35 +171,9 @@
         font-style: italic;
       }
     </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
   </head>
   <body>
     <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
 
       <div id="content">
         <div id="header">
@@ -214,14 +188,41 @@
 
           <ol>
             <li>
-              <h2>The first public API endpoint is a geographic search for yoga studios.</h2>
-              <p>GET /yoga_studios.json?location=78759</p>
-              <p>or</p>
-              <p>GET /yoga_studios.json?location=Berkeley</p>
+              <h2>Find nearby yoga studios.</h2>
+              <p>GET /api/yoga_studios/nearby.json?lat={float}&lng={float}</p>
             </li>
 
-          </ol>
+            <li>
+              <h2>Find nearby yoga classes.</h2>
+              <p>GET /api/yoga_classes/nearby.json?lat={float}&lng={float}</p>
+            </li>
 
+            <li>
+              <h2>Get a studios weekly Yoga Class schedule</h2>
+              <p>GET /api/yoga_studios/:id/yoga_classes.json</p>
+            </li>
+
+            <li>
+              <h2>Create a Yoga Studio</h2>
+              <p>POST /api/yoga_studios.json</p>
+              <ul><p>Required Params<p>
+                <li>address: String</li>
+                <li>name: String</li>
+              </ul>
+            </li>
+
+            <li>
+              <h2>Create a Yoga Class</h2>
+              <p>POST /api/yoga_studios/:id/yoga_classes.json</p>
+              <ul><p>Required Params<p>
+                <li>yoga_studio_id: Integer</li>
+                <li>name: String</li>
+                <li>start_time: Integer (example 0745 is 7:45am)</li>
+                <li>duration: Integer (minutes)</li>
+                <li>day</li>
+              </ul>
+            </li>
+          </ol>
         </div>
       </div>
 
