@@ -189,6 +189,7 @@ DEPENDENCIES
   active_model_serializers
   coffee-rails (~> 3.2.1)
   devise
+  execjs
   geocoder
   groupdate
   jquery-rails
@@ -202,3 +203,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)
+
+BUNDLED WITH
+   1.11.2
